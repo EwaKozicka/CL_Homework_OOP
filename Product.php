@@ -65,8 +65,7 @@ class Product {
     }
 
     /**
-     * 
-     * @return float - returns total price of products of the same type; includes discount
+     * @return float - returns total price of products of the same type; includes discount if >= 3 products
      */
     public function getTotalSum() {
         if ($this->quantity >= 3) {

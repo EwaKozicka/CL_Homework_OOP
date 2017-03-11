@@ -4,12 +4,14 @@ require_once 'Product.php';
 
 class ShoppingCart {
 
+    private $products = [];
+    
 /**
  * 
  * @param Product $newProduct
- * @return \ShoppingCart    private $products = [];
+ * @return \ShoppingCart    
  */
-
+    
     public function addProduct(Product $newProduct) {
         $this->products[$newProduct->getID()] = $newProduct;
         return $this;
@@ -37,6 +39,14 @@ class ShoppingCart {
 /**
  * prints receipt which includes product id, name, price, quantity and total sum
  */
+    private $toPay = 0;
+    
+//    private function toPay() {
+//        foreach ($this->products as $product) {
+//            foreach ($product as $key => $value) {
+//    }
+    
+    
     public function printReceipt() {
         foreach ($this->products as $product) {
             foreach ($product as $key => $value) {
@@ -45,8 +55,9 @@ class ShoppingCart {
                 echo '<br>Cena: ' . $product->getPrice() . ' PLN';
                 echo '<br>Ilość:  ' . $product->getQuantity();
                 echo '<br>Łącznie: ' . $product->getTotalSum() . ' PLN<br>';
+                $this->toPay += $product->getTotalSum();
             }
-        }
-    }
+        } echo '<br>Do zapłaty: '. $this->toPay;
+    }   
 
 }

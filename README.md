@@ -1,11 +1,11 @@
 # CL_Homework_OOP
 ==================================
 
-##Description
+## Description
 This script allows to create products and shopping cart and manage them.
 
 
-###Usage
+### Usage
 ==================================
 require_once 'Product.php';
 require_once 'ShoppingCart.php';
